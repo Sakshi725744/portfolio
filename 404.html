@@ -10,11 +10,8 @@
   <body>
     <div id="root"></div>
     <script>
-      // Handle client-side routing redirect
-      if (sessionStorage.redirect) {
-        history.replaceState(null, null, sessionStorage.redirect);
-        delete sessionStorage.redirect;
-      }
+      // Redirect all routes to index.html for client-side routing
+      sessionStorage.redirect = location.pathname;
     </script>
   </body>
 </html>
