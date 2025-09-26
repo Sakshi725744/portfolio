@@ -5,13 +5,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
-      pages: write
-      id-token: write
+      contents: write
 
     steps:
     - name: Checkout
@@ -23,27 +21,14 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: |
-        npm install --frozen-lockfile
-
-    - name: Verify installation
-      run: |
-        node --version
-        npm --version
-        ls -la node_modules/.bin/vite || echo "Vite not found in node_modules/.bin"
-        npm ls vite
+      run: npm install
 
     - name: Build
-      run: |
-        export PATH="$PATH:./node_modules/.bin"
-        npm run build
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: ./dist
+      run: npm run build
 
     - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
-      id: deployment
-      uses: actions/deploy-pages@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
