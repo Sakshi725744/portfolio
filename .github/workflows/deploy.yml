@@ -24,16 +24,19 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm clean-install --prefer-offline --no-audit
+        npm install --frozen-lockfile
 
     - name: Verify installation
       run: |
         node --version
         npm --version
-        npx vite --version
+        ls -la node_modules/.bin/vite || echo "Vite not found in node_modules/.bin"
+        npm ls vite
 
     - name: Build
-      run: npm run build
+      run: |
+        export PATH="$PATH:./node_modules/.bin"
+        npm run build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
