@@ -51,7 +51,10 @@ const Highlight = styled.span`
 const HeroSubtitle = styled.p`
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #e0e0e0;
+  color: #ffd700;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
 
   @media (max-width: 768px) {
     font-size: 1.3rem;
@@ -85,26 +88,32 @@ const Button = styled.a`
 `
 
 const PrimaryButton = styled(Button)`
-  background-color: #007bff;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  border: 2px solid #007bff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: white;
+    color: #007bff;
+    border-color: white;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 `
 
 const SecondaryButton = styled(Button)`
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 
   &:hover {
     background-color: white;
-    color: #333;
+    color: #007bff;
+    border-color: white;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
 `
 
@@ -185,6 +194,8 @@ const SkillIcon = styled.div`
   margin-bottom: 1rem;
 `
 
+
+
 function Home() {
   return (
     <HomeContainer>
@@ -192,20 +203,20 @@ function Home() {
         <HeroContent>
           <HeroText>
             <HeroTitle>
-              Hello, I'm <Highlight>Your Name</Highlight>
+              Hello, I'm <Highlight>Sakshi Parikh</Highlight>
             </HeroTitle>
             <HeroSubtitle>
-              Full Stack Developer & UI/UX Designer
+              Software Engineer - Backend, Data & AI, Mobile
             </HeroSubtitle>
             <HeroDescription>
-              I create beautiful, responsive web applications with modern technologies.
-              Passionate about clean code, user experience, and innovative solutions.
+              Passionate about building scalable solutions and solving complex problems through innovative technology.
+              Specializing in backend systems, data engineering, AI integration, and mobile development.
             </HeroDescription>
             <HeroButtons>
-              <PrimaryButton href="/portfolio">
+              <PrimaryButton href="/#/projects">
                 View My Work
               </PrimaryButton>
-              <SecondaryButton href="/about">
+              <SecondaryButton href="/#/about">
                 About Me
               </SecondaryButton>
             </HeroButtons>
@@ -221,19 +232,19 @@ function Home() {
           <h2>What I Do</h2>
           <SkillsGrid>
             <SkillCard>
-              <SkillIcon>🎨</SkillIcon>
-              <h3>UI/UX Design</h3>
-              <p>Creating intuitive and beautiful user interfaces with focus on user experience.</p>
-            </SkillCard>
-            <SkillCard>
-              <SkillIcon>💻</SkillIcon>
-              <h3>Frontend Development</h3>
-              <p>Building responsive web applications using React, JavaScript, and modern CSS.</p>
+              <SkillIcon>🏗️</SkillIcon>
+              <h3>Data Engineering</h3>
+              <p>Architecting scalable data pipelines using Apache Flink, PySpark, and AWS to process millions of records daily.</p>
             </SkillCard>
             <SkillCard>
               <SkillIcon>⚙️</SkillIcon>
               <h3>Backend Development</h3>
-              <p>Developing robust server-side applications and APIs with Node.js and databases.</p>
+              <p>Building robust distributed systems with Java, Python, Go, and Spring Boot for high-performance applications.</p>
+            </SkillCard>
+            <SkillCard>
+              <SkillIcon>📱</SkillIcon>
+              <h3>Mobile & Full Stack</h3>
+              <p>Developing cross-platform applications with Flutter and comprehensive web solutions with React and modern frameworks.</p>
             </SkillCard>
           </SkillsGrid>
         </Container>

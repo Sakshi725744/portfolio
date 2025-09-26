@@ -26,14 +26,20 @@ const NavContainer = styled.div`
 `
 
 const NavLogo = styled(Link)`
-  font-size: 1.5rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
   color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 
   &:hover {
     color: #007bff;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
   }
 `
 
@@ -84,7 +90,9 @@ function Navigation() {
     <NavigationContainer>
       <NavContainer>
         <NavLogo to="/">
-          Portfolio
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
         </NavLogo>
         <NavMenu>
           <NavItem>
@@ -105,10 +113,34 @@ function Navigation() {
           </NavItem>
           <NavItem>
             <NavLink
-              to="/portfolio"
-              className={location.pathname === '/portfolio' ? 'active' : ''}
+              to="/projects"
+              className={location.pathname === '/projects' ? 'active' : ''}
             >
-              Portfolio
+              Projects
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              to="/about"
+              className={location.pathname === '/about' ? 'active' : ''}
+              onClick={(e) => {
+                if (location.pathname === '/about') {
+                  e.preventDefault();
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                } else {
+                  setTimeout(() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 100);
+                }
+              }}
+            >
+              Contact
             </NavLink>
           </NavItem>
         </NavMenu>

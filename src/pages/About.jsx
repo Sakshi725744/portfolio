@@ -245,6 +245,137 @@ const TimelineContent = styled.div`
   }
 `
 
+const EducationSection = styled.section`
+  padding: 4rem 0;
+  background-color: white;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+`
+
+const EducationGrid = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+`
+
+const EducationCard = styled.div`
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 100%;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  p {
+    color: #666;
+    font-weight: 500;
+  }
+`
+
+const PublicationsSection = styled.section`
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+`
+
+const PublicationsList = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+`
+
+const PublicationItem = styled.div`
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+  h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  p {
+    color: #007bff;
+    font-weight: 500;
+    margin: 0;
+  }
+`
+
+const ContactSection = styled.section`
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+`
+
+const ContactButton = styled.a`
+  background: white;
+  color: #007bff;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+
+  &:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+`
+
 function About() {
   return (
     <AboutContainer>
@@ -257,15 +388,12 @@ function About() {
             <AboutText>
               <h1>About Me</h1>
               <AboutIntro>
-                I'm a passionate full-stack developer with 3+ years of experience creating
-                digital solutions that make a difference. I love turning complex problems
-                into simple, beautiful, and intuitive designs.
+                Accomplished Software Engineer with more than 3 years of experience architecting and delivering scalable,
+                high-impact solutions for customer-centric products. Proven expertise in Java, Python, and Go, with a strong
+                command of distributed systems, data engineering, and AWS cloud environments. Passionate about tackling complex
+                architectural challenges, driving projects from design to launch, and mentoring teammates. A fast learner
+                dedicated to mastering new technologies and contributing to a world-class engineering culture.
               </AboutIntro>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, contributing
-                to open-source projects, or enjoying a good cup of coffee while reading about
-                the latest trends in web development.
-              </p>
             </AboutText>
           </AboutContent>
         </Container>
@@ -276,39 +404,49 @@ function About() {
           <h2>Skills & Technologies</h2>
           <SkillsCategories>
             <SkillCategory>
-              <h3>Frontend</h3>
+              <h3>Languages</h3>
+              <SkillTags>
+                <SkillTag>Java</SkillTag>
+                <SkillTag>Python</SkillTag>
+                <SkillTag>Go</SkillTag>
+                <SkillTag>Dart</SkillTag>
+                <SkillTag>C++</SkillTag>
+                <SkillTag>JavaScript</SkillTag>
+              </SkillTags>
+            </SkillCategory>
+            <SkillCategory>
+              <h3>Backend & Data Technologies</h3>
+              <SkillTags>
+                <SkillTag>Spring Boot</SkillTag>
+                <SkillTag>Apache Flink</SkillTag>
+                <SkillTag>FastAPI</SkillTag>
+                <SkillTag>Kafka</SkillTag>
+                <SkillTag>gRPC</SkillTag>
+                <SkillTag>GraphQL</SkillTag>
+                <SkillTag>PySpark</SkillTag>
+              </SkillTags>
+            </SkillCategory>
+            <SkillCategory>
+              <h3>Cloud & Databases</h3>
+              <SkillTags>
+                <SkillTag>AWS</SkillTag>
+                <SkillTag>PostgreSQL</SkillTag>
+                <SkillTag>InfluxDB</SkillTag>
+                <SkillTag>Firebase</SkillTag>
+                <SkillTag>Grafana</SkillTag>
+                <SkillTag>Splunk</SkillTag>
+                <SkillTag>Docker</SkillTag>
+              </SkillTags>
+            </SkillCategory>
+            <SkillCategory>
+              <h3>Frontend & Mobile</h3>
               <SkillTags>
                 <SkillTag>React</SkillTag>
-                <SkillTag>JavaScript</SkillTag>
-                <SkillTag>TypeScript</SkillTag>
-                <SkillTag>HTML5</SkillTag>
-                <SkillTag>CSS3</SkillTag>
-                <SkillTag>Sass</SkillTag>
-                <SkillTag>Tailwind CSS</SkillTag>
-              </SkillTags>
-            </SkillCategory>
-            <SkillCategory>
-              <h3>Backend</h3>
-              <SkillTags>
-                <SkillTag>Node.js</SkillTag>
-                <SkillTag>Express.js</SkillTag>
-                <SkillTag>Python</SkillTag>
-                <SkillTag>MongoDB</SkillTag>
-                <SkillTag>PostgreSQL</SkillTag>
-                <SkillTag>REST APIs</SkillTag>
-                <SkillTag>GraphQL</SkillTag>
-              </SkillTags>
-            </SkillCategory>
-            <SkillCategory>
-              <h3>Tools & Others</h3>
-              <SkillTags>
-                <SkillTag>Git</SkillTag>
-                <SkillTag>Docker</SkillTag>
-                <SkillTag>AWS</SkillTag>
+                <SkillTag>Flutter</SkillTag>
+                <SkillTag>HTML</SkillTag>
+                <SkillTag>CSS</SkillTag>
                 <SkillTag>Figma</SkillTag>
-                <SkillTag>Webpack</SkillTag>
-                <SkillTag>Vite</SkillTag>
-                <SkillTag>Jest</SkillTag>
+                <SkillTag>Google Maps API</SkillTag>
               </SkillTags>
             </SkillCategory>
           </SkillsCategories>
@@ -320,42 +458,101 @@ function About() {
           <h2>Experience</h2>
           <Timeline>
             <TimelineItem>
-              <TimelineDate>2022 - Present</TimelineDate>
+              <TimelineDate>Jan 2024 - Present</TimelineDate>
               <TimelineContent>
-                <h3>Senior Frontend Developer</h3>
-                <h4>Tech Company Inc.</h4>
+                <h3>Software Engineer - 2</h3>
+                <h4>Intuit, Bengaluru</h4>
                 <p>
-                  Led the development of responsive web applications using React and TypeScript.
-                  Collaborated with design teams to implement pixel-perfect UI components and
-                  improved application performance by 40%.
+                  Architected and delivered a config driven data ingestion pipeline using Apache Flink (Java) to store Kafka events
+                  from multiple demand and supply sources into AWS InfluxDB timeseries database. Processing 35M records per day.
+                  Led initiative to design Anomaly Validation System for forecast plans, enhancing data accuracy by 32%.
                 </p>
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-              <TimelineDate>2021 - 2022</TimelineDate>
+              <TimelineDate>Aug 2022 - Jan 2024</TimelineDate>
               <TimelineContent>
-                <h3>Full Stack Developer</h3>
-                <h4>Startup Solutions</h4>
+                <h3>Software Engineer - 1</h3>
+                <h4>Intuit, Bengaluru</h4>
                 <p>
-                  Developed and maintained full-stack web applications using MERN stack.
-                  Built RESTful APIs and integrated third-party services to enhance user experience.
+                  Developed Self Serve Reporting tool for Virtual Expert Platform(VEP) resulting in 23% quicker and efficient engagements.
+                  Designed config driven data pipeline using py-spark, postgreSQL Database and AWS along with Java backend service.
+                  Acted as point-of-contact and onboarded 20+ teams to the platform.
                 </p>
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
-              <TimelineDate>2020 - 2021</TimelineDate>
+              <TimelineDate>Jan 2022 - Jul 2022</TimelineDate>
               <TimelineContent>
-                <h3>Junior Web Developer</h3>
-                <h4>Digital Agency</h4>
+                <h3>Software Engineering Intern</h3>
+                <h4>Providence Global Center, Hyderabad</h4>
                 <p>
-                  Started my professional journey building websites and web applications.
-                  Gained experience in HTML, CSS, JavaScript, and various CMS platforms.
+                  Developed Baracuda App using Flutter designed to help users manage their mental health. The app was optimized
+                  for performance and usability, resulting in an 18% increase in efficiency for doctors and 54% increased user
+                  engagement within the first month of launch.
+                </p>
+              </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineDate>Feb 2021 - Jul 2021</TimelineDate>
+              <TimelineContent>
+                <h3>Software Development Intern</h3>
+                <h4>Appointy India, Bhopal</h4>
+                <p>
+                  Engineered a production-critical Webhooks API from the ground up using Go, gRPC, and GraphQL, enabling custom
+                  third-party integrations for automated appointment tracking. The feature contributed to a $1.2 million revenue
+                  increase within 12 months of launch.
                 </p>
               </TimelineContent>
             </TimelineItem>
           </Timeline>
         </Container>
       </ExperienceSection>
+
+      <EducationSection>
+        <Container>
+          <h2>Education</h2>
+          <EducationGrid>
+            <EducationCard>
+              <h3>Bachelor of Information Technology</h3>
+              <h4>Vellore Institute of Technology, Vellore</h4>
+              <p>GPA: 9.17/10.0 | 2018-2022</p>
+            </EducationCard>
+          </EducationGrid>
+        </Container>
+      </EducationSection>
+
+      <PublicationsSection>
+        <Container>
+          <h2>Publications & Certifications</h2>
+          <PublicationsList>
+            <PublicationItem>
+              <h4>Machine Learning in Supply Chain Management</h4>
+              <p>Springer Book Publication, 2021</p>
+            </PublicationItem>
+            <PublicationItem>
+              <h4>Brain MRI segmentation techniques based on CNN and its variants</h4>
+              <p>Elsevier Publication, 2021</p>
+            </PublicationItem>
+            <PublicationItem>
+              <h4>Hybridization of AES and RSA Algorithm in File Encryption Using Parallel Computing</h4>
+              <p>Springer Book Publication, 2023</p>
+            </PublicationItem>
+            <PublicationItem>
+              <h4>MLH Equinox 2021 Hackathon Official App</h4>
+              <p>Published on Google Play Store with 650+ participants</p>
+            </PublicationItem>
+          </PublicationsList>
+        </Container>
+      </PublicationsSection>
+
+      <ContactSection id="contact">
+        <Container>
+          <h2>Interested in working together?</h2>
+          <p>I'm always open to discussing new opportunities and interesting projects. Let's connect and explore how we can collaborate!</p>
+          <ContactButton href="mailto:sjparikh78@gmail.com">Get In Touch</ContactButton>
+        </Container>
+      </ContactSection>
     </AboutContainer>
   )
 }
